@@ -1,0 +1,153 @@
+/*Formatação do CSS que existe do próprio navegador*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Formatação do "body"*/
+body{
+    background-image: url(./images/Fundo.jpg);
+    background-position: top center; /*Posicionamento da imagem de fundo*/
+    background-size: 100% auto; /*100% da imagem, com o tamanho no auto*/
+    background-repeat: no-repeat; /*Não repetir a imagem de fundo*/
+    background-color: #121214;
+    font-family: 'Inter', sans-serif;
+    line-height: 160%; /*Espaçamento entre as linhas do texto*/
+}
+
+header{
+    padding-top: 32px; 
+    height: 152px; /*pré-definindo a altura da header para deixar a animação suave*/
+}
+
+header div{
+    width: 120px;
+    margin: auto; /*Utiliza-se "Margin" e não "Text-align" pois divs não tem propriedades de texto*/
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%); /*Colocar cores Gradiantes, primeiro coloca o grau, cores e porcentagem na imagem*/
+    border-radius: 50%;
+    display: flex;
+    padding: 4px; /*Preenchimento*/
+    transition: transform .3s; /*Transform, é o "efeito" escolhido no hover, e depois os segundos da transição*/
+}
+
+header div:hover{
+    transform: scale(1.1); /*Escala do elemento de 1.1*/
+
+}
+
+header img{
+    width: 100%;
+    border-radius: 50%; /*Raio da borda*/
+
+}
+
+/*Formatação da "main" */
+main{
+    margin: auto;
+    max-width: 580px;
+    width: 90%;
+    display: grid; /*No caso do "display:flex", iria ficar um ao lado do outro, grid deixa em colunas*/
+    gap: 24px; /*Espaçamento*/
+    margin-top: 32px;
+}
+
+section{ 
+    color: white;
+    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%); /*Colocar cores Gradiantes, primeiro coloca o grau, cores e porcentagem na imagem*/
+    padding-top: 4px; /*Preenchimento de 4px sobre a borda de cima*/
+    border-radius: 10px; /*Raio da borda*/
+}
+
+section div{
+    background-color: #2A2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px; /*Raio da borda*/
+}
+
+/*Formatação de todos os "h2" existentes na section*/
+section h2{ 
+    letter-spacing: -0.47;
+}
+
+/*Formatação de todos os "p" existentes na section*/
+section p{ 
+    letter-spacing: -0.18px;
+    color: #a1a1aa;
+}
+
+section ul li{
+    transition: transform .3s; /*Transform, é o "efeito" escolhido no hover, e depois os segundos da transição*/
+}
+
+section ul li:hover{
+    transform: scale(1.1); /*Escala do elemento de 1.1*/
+}
+
+/*Formatação de todas as "ul"*/
+ul{
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+/*Formatação das imagens da ul "games-list" existentes na section*/
+.games-list img{
+    border-radius: 15px;
+    width: 90px;
+}
+
+/*Formatação das imagens da ul "channel-list" existentes na section*/
+.channel-list img{
+    border-radius: 50%;
+    width: 70px;
+    border: 1px solid #443E54
+}
+
+/* animation */
+
+header div {
+    animation: fromTop .7s .2s backwards; /*2s = delay*/
+}
+
+main section { /*aplicar animação no main*/
+    animation: fromBottom .7s backwards;
+}
+
+main section:nth-child(1) { /*1º Sessão - Meus Jogos */
+    animation-delay: 0;
+}
+
+main section:nth-child(2) { /*2º Sessão - Canais e Streamers */
+    animation-delay: .3s;
+}
+
+main section:nth-child(3) { /*3º Sessão - Redes Sociais */
+    animation-delay: .6s;
+}
+
+@keyframes fromTop { /*"@keyframes" serve pra dar inicio a animação seguido do nome que você coloca para a animação, "fromTop"*/
+    from { /*de*/
+        opacity: 0;
+        transform: translateY(-30px) /* eixo y, animação começa em -30*/
+    }
+
+    to { /*para*/
+        opacity: 1;
+        transform: translateY(0) /*eixo y, animação termina em 0*/
+    }
+}
+
+@keyframes fromBottom { /*"@keyframes" serve pra dar inicio a animação seguido do nome que você coloca para a animação, "fromBottom"*/
+    from { /*de*/
+        opacity: 0;
+        transform: translateY(30px) /*eixo y, animação começa em 30*/
+    }
+
+    to { /*para*/
+        opacity: 1;
+        transform: translateY(0)  /*eixo y, animação termina em 0*/
+    }
+}
