@@ -1,6 +1,6 @@
 # NLW---Rocketseat
 
-![preview](./.github/preview.png)
+![preview](/images/preview.png)
 
 > Trilha Explorer
 
